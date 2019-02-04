@@ -7,13 +7,10 @@ def merge(line):
     """
     Function that merges a single row or column in 2048.
     """
-    new_line = []
     result_line = []
 
     # create a new line with no '0' in between numbers
-    for num in line:
-        if num != 0:
-            new_line.append(num)
+    new_line = filter(lambda x: x != 0, line)
 
     # check if 2 neighbouring numbers are the same -> merge
     while len(new_line) > 1:
@@ -31,6 +28,6 @@ def merge(line):
     return result_line
 
 
-a_line = [8, 8, 2, 2, 4, 8, 8]
+a_line = [2, 2, 2, 2, 2]
 print merge(a_line)
 
